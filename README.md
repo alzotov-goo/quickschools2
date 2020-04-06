@@ -5,7 +5,7 @@
 * every entity has Id column
 * joins(many*many) are named individually but key pairs have convention tabble1Id-table2Id
 * joins are independent from entities, and separately mapped on them
-* idea of my 'join graph algorithm' is walking thru joins until all tables participating in report are connected 
+* idea of my 'join graph algorithm' is walking thru joins until all tables participating in report are connected   
   nodes are tables - links between them are joins  
   essentially all schema joins are the graph connecting tables  
   we can walk thru it, starting from any node according to first field(it's table) of the query (if it's not connected - then that's it -  query is impossible),  
