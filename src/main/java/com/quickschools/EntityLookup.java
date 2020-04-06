@@ -31,8 +31,17 @@ public class EntityLookup {
 
     public static EntityLookup createSchema(Entity[] entities, Join[] joins)
     {
-        if(schema==null) schema = new EntityLookup(entities, joins);
-        return schema;
+        if(schema==null) {
+            schema = new EntityLookup(entities, joins);
+            return schema;
+        }
+        throw new IllegalStateException("schema has been created already!");
+    }
+
+    public static EntityLookup getInstance(Entity[] entities, Join[] joins)
+    {
+       if(schema == null) throw new IllegalStateException("schema has not been created!");
+       return schema;
     }
 
     public String buildReportQuery(String[] reportFieldNamesParam)
